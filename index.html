@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bread &amp; Honey is a charming bakery and breakfast restaurant in Bakersfield, serving artisanal pastries and hot meals. Open daily 6am–8pm at 6314 Ashe Rd Ste 400.">
+  <title>Bread &amp; Honey | Bakery &amp; Breakfast in Bakersfield</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Great+Vibes&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --honey: #c49a3c;
+      --honey-deep: #a37b28;
+      --gold-soft: #f3e0b0;
+      --cream: #fbf6ee;
+      --ivory: #f4ead8;
+      --linen: #efe3cd;
+      --brown: #3d2a1d;
+      --brown-mid: #5c4030;
+      --caramel: #8a5a32;
+      --espresso: #2a1a12;
+      --white: #fffdf8;
+      --muted: #7a614c;
+      --text: #3d2a1d;
+      --shadow: 0 14px 36px rgba(42, 26, 18, 0.1);
+      --radius: 18px;
+      --max: 1140px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    .wrap { width: min(100% - 2rem, var(--max)); margin-inline: auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(251, 246, 238, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(196, 154, 60, 0.28);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 74px;
+    }
+    .logo {
+      display: flex;
+      align-items: baseline;
+      gap: 0.28rem;
+      text-decoration: none;
+      color: var(--brown);
+      line-height: 1;
+    }
+    .logo-name {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 600;
+      font-size: 1.55rem;
+      letter-spacing: 0.02em;
+    }
+    .logo-amp {
+      font-family: "Great Vibes", cursive;
+      color: var(--honey-deep);
+      font-size: 1.7rem;
+      padding: 0 0.22rem;
+    }
+    .nav-links {
+      display: none;
+      list-style: none;
+      gap: 1.15rem;
+      font-weight: 600;
+      font-size: 0.92rem;
+      letter-spacing: 0.04em;
+    }
+    .nav-links a { text-decoration: none; color: var(--brown-mid); }
+    .nav-links a:hover { color: var(--honey-deep); }
+    .nav-cta {
+      display: none;
+      background: var(--brown);
+      color: var(--cream);
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      padding: 0.6rem 1.05rem;
+      border-radius: 999px;
+    }
+    .menu-btn {
+      border: 1px solid var(--linen);
+      background: var(--white);
+      color: var(--brown);
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      font-size: 1.25rem;
+      cursor: pointer;
+    }
+    .mobile-panel { display: none; padding: 0 1rem 1rem; }
+    .mobile-panel.open { display: block; }
+    .mobile-panel a {
+      display: block;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.7rem 0.2rem;
+      border-bottom: 1px solid var(--linen);
+      color: var(--brown);
+    }
+    @media (min-width: 900px) {
+      .nav-links, .nav-cta { display: flex; }
+      .menu-btn, .mobile-panel { display: none !important; }
+    }
+
+    .hero {
+      position: relative;
+      padding: 2.4rem 0 3.4rem;
+      background:
+        radial-gradient(circle at 90% 0%, #f3e0b0 0, transparent 38%),
+        radial-gradient(circle at 0% 80%, #efe3cd 0, transparent 34%),
+        var(--ivory);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(196,154,60,0.4), transparent);
+    }
+    .hero-grid { display: grid; gap: 2rem; align-items: center; }
+    @media (min-width: 880px) {
+      .hero-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+    }
+    .eyebrow {
+      display: inline-block;
+      color: var(--honey-deep);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+    }
+    h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(3rem, 8vw, 5.2rem);
+      line-height: 0.92;
+      color: var(--brown);
+    }
+    h1 em {
+      font-family: "Great Vibes", cursive;
+      font-style: normal;
+      color: var(--honey-deep);
+      font-weight: 400;
+      padding: 0 0.18em;
+    }
+    .tagline {
+      margin-top: 1rem;
+      font-size: 1.12rem;
+      color: var(--brown-mid);
+      max-width: 34rem;
+    }
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem 1rem;
+      margin: 1.15rem 0 1.35rem;
+      align-items: center;
+      font-weight: 600;
+    }
+    .stars { color: var(--honey); letter-spacing: 0.06em; white-space: nowrap; }
+    .stars .half { position: relative; display: inline-block; color: rgba(196, 154, 60, 0.28); }
+    .stars .half::after {
+      content: "★";
+      position: absolute;
+      left: 0; top: 0;
+      width: 18%;
+      overflow: hidden;
+      color: var(--honey);
+    }
+    .meta-row small { font-weight: 500; color: var(--muted); }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.8rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      letter-spacing: 0.02em;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--brown); color: var(--cream); }
+    .btn-primary:hover { background: var(--espresso); }
+    .btn-gold { background: var(--honey); color: var(--espresso); }
+    .btn-ghost { background: var(--white); color: var(--brown); border-color: var(--linen); }
+    .order-note { margin-top: 0.9rem; font-size: 0.92rem; color: var(--muted); max-width: 36rem; }
+    .hero-card {
+      background: var(--white);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(196, 154, 60, 0.2);
+    }
+    .hero-card img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      object-position: center 42%;
+    }
+    @media (min-width: 880px) {
+      .hero-card img { height: 460px; }
+    }
+    .hero-card figcaption {
+      padding: 0.95rem 1.15rem 1.15rem;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--brown);
+    }
+    .hero-card figcaption span {
+      display: block;
+      font-family: "Great Vibes", cursive;
+      font-weight: 400;
+      color: var(--honey-deep);
+      font-size: 1.15rem;
+    }
+
+    section { padding: 3.5rem 0; }
+    .kicker {
+      font-family: "Great Vibes", cursive;
+      color: var(--honey-deep);
+      font-size: 1.55rem;
+      line-height: 1;
+    }
+    h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2.1rem, 4.4vw, 3rem);
+      font-weight: 600;
+      line-height: 1.1;
+      color: var(--brown);
+      margin: 0.15rem 0 0.55rem;
+    }
+    .lead { color: var(--muted); max-width: 40rem; margin-bottom: 1.7rem; }
+
+    #menu { background: var(--cream); }
+    .feature-grid {
+      display: grid;
+      gap: 1.15rem;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 740px) {
+      .feature-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(42, 26, 18, 0.06);
+      border: 1px solid rgba(138, 90, 50, 0.1);
+      display: flex;
+      flex-direction: column;
+    }
+    .card img { width: 100%; height: 220px; object-fit: cover; }
+    .card.tall img { object-position: center 35%; }
+    .card-body { padding: 0.95rem 1.05rem 1.15rem; }
+    .badge {
+      display: inline-block;
+      background: var(--gold-soft);
+      color: #6b4e12;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.18rem 0.5rem;
+      border-radius: 999px;
+      margin-bottom: 0.35rem;
+    }
+    .card h3, .item h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    .card h3 { font-size: 1.35rem; }
+    .item-grid {
+      display: grid;
+      gap: 0.7rem;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 1.2rem;
+    }
+    @media (min-width: 800px) {
+      .item-grid { grid-template-columns: repeat(5, 1fr); }
+    }
+    .item {
+      background: var(--white);
+      border: 1px solid rgba(138, 90, 50, 0.1);
+      border-radius: 14px;
+      padding: 0.9rem 0.75rem;
+      text-align: center;
+    }
+    .item .ico { font-size: 1.5rem; display: block; margin-bottom: 0.35rem; }
+    .item h3 { font-size: 1.05rem; line-height: 1.25; }
+    .also {
+      margin-top: 1.8rem;
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.2rem 0.85rem;
+      border: 1px solid rgba(196, 154, 60, 0.28);
+    }
+    .also h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+
+    .card-body { display: flex; justify-content: space-between; align-items: baseline; gap: 0.6rem; }
+    .price {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 600;
+      color: var(--honey-deep);
+      font-size: 1.15rem;
+      white-space: nowrap;
+    }
+    .menu-jump {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin: 0 0 1.5rem;
+    }
+    .menu-jump a {
+      text-decoration: none;
+      background: var(--white);
+      border: 1px solid var(--linen);
+      padding: 0.32rem 0.72rem;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--brown-mid);
+    }
+    .menu-jump a:hover { color: var(--honey-deep); border-color: var(--honey); }
+    .menu-cols {
+      display: grid;
+      gap: 1.15rem 1.4rem;
+      margin-top: 2rem;
+    }
+    @media (min-width: 800px) {
+      .menu-cols { grid-template-columns: 1fr 1fr; }
+    }
+    .menu-cat {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.15rem 0.65rem;
+      border: 1px solid rgba(138, 90, 50, 0.1);
+    }
+    .menu-cat h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.55rem;
+      font-weight: 600;
+      color: var(--brown);
+      margin-bottom: 0.2rem;
+    }
+    .menu-cat .cat-note {
+      color: var(--muted);
+      font-size: 0.86rem;
+      margin-bottom: 0.45rem;
+    }
+    .menu-list { list-style: none; }
+    .menu-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      padding: 0.4rem 0;
+      border-bottom: 1px dotted rgba(138, 90, 50, 0.18);
+    }
+    .menu-list li:last-child { border-bottom: 0; }
+    .menu-list .name { font-weight: 600; }
+    .menu-list .dots {
+      flex: 1;
+      border-bottom: 1px dotted rgba(138, 90, 50, 0.35);
+      min-width: 1.2rem;
+      height: 0.7em;
+    }
+    .price-note {
+      margin-top: 1.3rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+    @media (min-width: 740px) {
+      .feature-grid.six { grid-template-columns: repeat(3, 1fr); }
+    }
+    .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .chip {
+      background: var(--ivory);
+      border: 1px solid var(--linen);
+      color: var(--brown);
+      font-weight: 600;
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.92rem;
+    }
+
+    #gallery { background: var(--ivory); }
+    .gallery-grid {
+      display: grid;
+      gap: 0.85rem;
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (min-width: 800px) {
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .gallery-grid figure {
+      position: relative;
+      margin: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--linen);
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .gallery-grid .wide img { height: 240px; }
+    .gallery-grid .tall img { height: 280px; object-position: center 30%; }
+    @media (min-width: 800px) {
+      .gallery-grid .wide { grid-column: 1 / -1; }
+      .gallery-grid .wide img { height: 340px; }
+      .gallery-grid .tall { grid-row: span 2; }
+      .gallery-grid .tall img { height: 100%; min-height: 280px; }
+    }
+    .gallery-grid figcaption {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      padding: 1.5rem 0.75rem 0.65rem;
+      background: linear-gradient(transparent, rgba(42,26,18,0.72));
+      color: #fff8ee;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    #cakes { background: linear-gradient(180deg, #f4ead8 0%, #fbf6ee 100%); }
+    .cake-card {
+      display: grid;
+      gap: 1.3rem;
+      background: var(--white);
+      border-radius: 22px;
+      padding: 1.2rem;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(196, 154, 60, 0.22);
+      align-items: center;
+    }
+    @media (min-width: 720px) {
+      .cake-card { grid-template-columns: 0.9fr 1.1fr; padding: 1.4rem; }
+    }
+    .cake-card img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      object-position: center 80%;
+      border-radius: 16px;
+    }
+    .cake-card h2 { font-size: 2rem; }
+    .cake-card p { color: var(--brown-mid); margin-bottom: 1rem; max-width: 36rem; }
+    .cake-side a.phone {
+      display: block;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--brown);
+      text-decoration: none;
+      margin: 0.2rem 0 0.9rem;
+    }
+
+    #why { background: var(--cream); }
+    .why-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+    @media (min-width: 740px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1000px) { .why-grid { grid-template-columns: repeat(3, 1fr); } }
+    .why-item {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 1.2rem 1.15rem;
+      border: 1px solid rgba(138, 90, 50, 0.1);
+    }
+    .why-item .ico {
+      width: 46px; height: 46px; border-radius: 50%;
+      display: grid; place-items: center;
+      background: var(--ivory);
+      font-size: 1.25rem;
+      margin-bottom: 0.65rem;
+    }
+    .why-item h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+    .why-item p { color: var(--muted); font-size: 0.98rem; }
+
+    #reviews { background: var(--ivory); }
+    .score-banner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem 1.2rem;
+      margin-bottom: 1.4rem;
+      background: var(--brown);
+      color: var(--cream);
+      border-radius: 16px;
+      padding: 1rem 1.25rem;
+    }
+    .score-num {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 2.6rem;
+      line-height: 1;
+      font-weight: 600;
+    }
+    .score-banner .stars { color: var(--honey); }
+    .score-banner .stars .half { color: rgba(243, 224, 176, 0.28); }
+    .score-banner .stars .half::after { color: var(--honey); }
+    .review-grid { display: grid; gap: 1rem; }
+    @media (min-width: 800px) { .review-grid { grid-template-columns: 1fr 1fr 1fr; } }
+    blockquote.card { padding: 1.3rem 1.2rem 1.15rem; }
+    blockquote p {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      line-height: 1.45;
+      color: var(--brown);
+    }
+    blockquote footer {
+      margin-top: 0.85rem;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.85rem;
+      font-style: normal;
+      font-family: "Source Sans 3", sans-serif;
+    }
+
+    #visit { background: var(--cream); }
+    .visit-grid { display: grid; gap: 1.2rem; }
+    @media (min-width: 860px) {
+      .visit-grid { grid-template-columns: 1.15fr 0.85fr; align-items: stretch; }
+    }
+    .visit-photos { display: grid; gap: 0.8rem; }
+    .visit-photos img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 3px solid var(--white);
+      box-shadow: var(--shadow);
+    }
+    .visit-photos .storefront { height: 230px; object-position: center 60%; }
+    .map-wrap {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      min-height: 240px;
+      box-shadow: var(--shadow);
+      border: 3px solid var(--white);
+      background: var(--linen);
+    }
+    .map-fallback {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      text-align: center;
+      padding: 1.2rem;
+      background:
+        linear-gradient(rgba(138, 90, 50, 0.1) 1px, transparent 1px) 0 0 / 36px 36px,
+        linear-gradient(90deg, rgba(138, 90, 50, 0.1) 1px, transparent 1px) 0 0 / 36px 36px,
+        #efe3cd;
+      z-index: 0;
+    }
+    .map-fallback .pin { font-size: 2rem; }
+    .map-fallback strong { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.25rem; }
+    .map-fallback a { color: var(--honey-deep); font-weight: 700; }
+    .map-wrap iframe {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      min-height: 240px;
+      border: 0;
+    }
+    .visit-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.3rem;
+      border: 1px solid rgba(138, 90, 50, 0.1);
+    }
+    .visit-card h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+    }
+    .info-row {
+      display: flex;
+      gap: 0.75rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--linen);
+    }
+    .info-row:last-of-type { border-bottom: 0; }
+    .info-row strong {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--honey-deep);
+    }
+    .info-row a { color: var(--brown); font-weight: 600; }
+    .visit-card .cta-row { margin-top: 1.1rem; }
+    .amenity { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.9rem; }
+
+    footer.site {
+      background: var(--espresso);
+      color: #e8d7c0;
+      padding: 2.3rem 0 1.6rem;
+    }
+    .foot {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.3rem 2.2rem;
+      justify-content: space-between;
+    }
+    .foot .brand {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.7rem;
+      color: var(--gold-soft);
+      display: block;
+      line-height: 1;
+    }
+    .foot .brand em {
+      font-family: "Great Vibes", cursive;
+      font-style: normal;
+      color: var(--honey);
+      padding: 0 0.2rem;
+    }
+    .foot a { color: var(--gold-soft); font-weight: 600; }
+    .legal { margin-top: 1.4rem; font-size: 0.85rem; opacity: 0.78; max-width: 50rem; }
+    .demo-note {
+      margin-top: 0.55rem;
+      font-size: 0.85rem;
+      color: var(--gold-soft);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="#top">
+        <span class="logo-name">Bread</span>
+        <span class="logo-amp">&amp;</span>
+        <span class="logo-name">Honey</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#gallery">Photos</a></li>
+          <li><a href="#cakes">Custom cakes</a></li>
+          <li><a href="#why">Why us</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#visit">Visit</a></li>
+        </ul>
+      </nav>
+      <a class="nav-cta" href="tel:+16612828487">Call to order</a>
+      <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="mobilePanel" aria-label="Open menu">☰</button>
+    </div>
+    <div class="mobile-panel" id="mobilePanel">
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Photos</a>
+      <a href="#cakes">Custom cakes</a>
+      <a href="#why">Why us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit</a>
+      <a href="tel:+16612828487">Call (661) 282-8487</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Bakery · Breakfast · Café</p>
+          <h1>Bread <em>&amp;</em> Honey</h1>
+          <p class="tagline">A charming bakery and breakfast restaurant in Bakersfield, serving artisanal pastries and a range of hot meals — breakfast, lunch, bakery, and café.</p>
+          <div class="meta-row">
+            <span class="stars" aria-hidden="true">★★★★<span class="half">★</span></span>
+            <span>4.1 from 250 Google reviews</span>
+            <small>About $10–20 per person</small>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="tel:+16612828487">Call</a>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=6314+Ashe+Rd+Ste+400,+Bakersfield,+CA+93313" target="_blank" rel="noopener">Directions</a>
+            <a class="btn btn-gold" href="tel:+16612828487">Order</a>
+          </div>
+          <p class="order-note">Order pickup or delivery online through Toast. Grubhub has $5 off orders over $25.</p>
+        </div>
+        <figure class="hero-card">
+          <img src="images/pastry-case.jpg" alt="Pastry display case at Bread &amp; Honey with croissants, danishes, muffins, and chalkboard menus">
+          <figcaption>The pastry case<span>Fresh bakery items, made for the case</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="menu">
+      <div class="wrap">
+        <p class="kicker">From the kitchen &amp; case</p>
+        <h2>Menu</h2>
+        <p class="lead">A bakery and breakfast menu — plates, burritos, pastries, and coffee. Prices below come from the shop’s “Provided by business” Google menu when available, and otherwise from the in-store menu boards.</p>
+
+        <nav class="menu-jump" aria-label="Menu categories">
+          <a href="#breakfast-plates">Breakfast plates</a>
+          <a href="#burritos">Burritos</a>
+          <a href="#breakfast-sandwiches">Breakfast sandwiches</a>
+          <a href="#omelettes">Omelettes</a>
+          <a href="#sides">Sides</a>
+          <a href="#chefs-choice">Chef’s choice</a>
+          <a href="#burgers">Burgers</a>
+          <a href="#salads">Salads</a>
+          <a href="#flatbreads">Flat breads</a>
+          <a href="#hot-sandwiches">Hot sandwiches</a>
+          <a href="#cold-sandwiches">Cold sandwiches</a>
+          <a href="#pastries">Pastries</a>
+          <a href="#coffee-drinks">Coffee &amp; drinks</a>
+        </nav>
+
+        <div class="feature-grid six">
+          <article class="card">
+            <img src="images/chilaquiles.jpg" alt="Chilaquiles with a fried egg, avocado, radish, pickled onion, and crema">
+            <div class="card-body">
+              <div>
+                <span class="badge">Popular</span>
+                <h3>Chilaquiles</h3>
+              </div>
+              <span class="price">$18.00</span>
+            </div>
+          </article>
+          <article class="card">
+            <img src="images/tres-leches-french-toast.jpg" alt="Tres leches French toast with strawberries, whipped cream, and powdered sugar">
+            <div class="card-body">
+              <h3>3 Leches French Toast</h3>
+              <span class="price">$15.60</span>
+            </div>
+          </article>
+          <article class="card">
+            <img src="images/croissants-plate.jpg" alt="Assorted croissants and pastries on white plates">
+            <div class="card-body">
+              <div>
+                <span class="badge">Popular</span>
+                <h3>Croissants</h3>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="images/coffee.jpg" alt="A glass mug of coffee with milk">
+            <div class="card-body">
+              <div>
+                <span class="badge">Popular</span>
+                <h3>Coffee</h3>
+              </div>
+              <span class="price">$3.00</span>
+            </div>
+          </article>
+          <article class="card">
+            <img src="images/burritos.jpg" alt="Two burritos on a black plate">
+            <div class="card-body">
+              <h3>Breakfast burritos</h3>
+            </div>
+          </article>
+          <article class="card">
+            <img src="images/breakfast-burger.jpg" alt="Breakfast Burger: a biscuit sandwich with egg, melted cheese, and bacon">
+            <div class="card-body">
+              <h3>Breakfast Burger</h3>
+            </div>
+          </article>
+        </div>
+
+        <div class="menu-cols">
+          <div class="menu-cat" id="breakfast-plates">
+            <h3>Breakfast plates</h3>
+            <ul class="menu-list">
+              <li><span class="name">Chilaquiles</span><span class="dots" aria-hidden="true"></span><span class="price">$18.00</span></li>
+              <li><span class="name">Morning Plate</span><span class="dots" aria-hidden="true"></span><span class="price">$13</span></li>
+              <li><span class="name">Biscuit &amp; Gravy</span><span class="dots" aria-hidden="true"></span><span class="price">$11</span></li>
+              <li><span class="name">Pancake Plate</span><span class="dots" aria-hidden="true"></span><span class="price">$14</span></li>
+              <li><span class="name">Waffles Plate</span><span class="dots" aria-hidden="true"></span><span class="price">$14</span></li>
+              <li><span class="name">Chicken &amp; Waffle</span><span class="dots" aria-hidden="true"></span><span class="price">$14</span></li>
+              <li><span class="name">Loaded Oatmeal</span><span class="dots" aria-hidden="true"></span><span class="price">$12</span></li>
+              <li><span class="name">French Toast</span><span class="dots" aria-hidden="true"></span><span class="price">$11</span></li>
+              <li><span class="name">3 Leches French Toast</span><span class="dots" aria-hidden="true"></span><span class="price">$15.60</span></li>
+            </ul>
+          </div>
+
+          <div class="menu-cat" id="burritos">
+            <h3>Breakfast burritos</h3>
+            <ul class="menu-list">
+              <li><span class="name">Western</span><span class="dots" aria-hidden="true"></span><span class="price">$14.40</span></li>
+              <li><span class="name">Chorizo</span><span class="dots" aria-hidden="true"></span><span class="price">$14.40</span></li>
+              <li><span class="name">Sausage &amp; Egg</span><span class="dots" aria-hidden="true"></span><span class="price">$14.40</span></li>
+              <li><span class="name">Chile Verde</span><span class="dots" aria-hidden="true"></span><span class="price">$15.60</span></li>
+              <li><span class="name">Steak &amp; Eggs</span><span class="dots" aria-hidden="true"></span><span class="price">$14.40</span></li>
+              <li><span class="name">Veggie</span><span class="dots" aria-hidden="true"></span><span class="price">$14.40</span></li>
+              <li><span class="name">Montreal Burrito</span></li>
+              <li><span class="name">Bean &amp; Cheese Burrito</span></li>
+            </ul>
+          </div>
+
+          <div class="menu-cat" id="breakfast-sandwiches">
+            <h3>Breakfast sandwiches</h3>
+            <ul class="menu-list">
+              <li><span class="name">Early Bird</span><span class="dots" aria-hidden="true"></span><span class="price">$10</span></li>
+              <li><span class="name">The Stallion</span><span class="dots" aria-hidden="true"></span><span class="price">$10</span></li>
+              <li><span class="name">All In One</span><span class="dots" aria-hidden="true"></span><span class="price">$11</span></li>
+              <li><span class="name">Breakfast Delight</span><span class="dots" aria-hidden="true"></span><span class="price">$11</span></li>
+              <li><span class="name">The Crossham</span><span class="dots" aria-hidden="true"></span><span class="price">$13</span></li>
+              <li><span class="name">The Slammer</span><span class="dots" aria-hidden="true"></span><span class="price">$14</span></li>
+              <li><span class="name">Monte Cristo</span><span class="dots" aria-hidden="true"></span><span class="price">$16.80</span></li>
+              <li><span class="name">Breakfast Torta</span><span class="dots" aria-hidden="true"></span><span class="price">$15.60</span></li>
+            </ul>
+          </div>
+
+          <div class="menu-cat" id="omelettes">
+            <h3>Omelettes</h3>
+            <ul class="menu-list">
+              <li><span class="name">West Coast</span><span class="dots" aria-hidden="true"></span><span class="price">$15</span></li>
+              <li><span class="name">Anaheim</span><span class="dots" aria-hidden="true"></span><span class="price">$15</span></li>
+              <li><span class="name">Chile Verde</span><span class="dots" aria-hidden="true"></span><span class="price">$15</span></li>
+              <li><span class="name">Greek</span><span class="dots" aria-hidden="true"></span><span class="price">$15</span></li>
+              <li><span class="name">Montreal</span><span class="dots" aria-hidden="true"></span><span class="price">$15</span></li>
+            </ul>
+          </div>
+
+          <div class="menu-cat" id="sides">
+            <h3>Sides</h3>
+            <ul class="menu-list">
+              <li><span class="name">Fried Pickle Chips</span><span class="dots" aria-hidden="true"></span><span class="price">$4</span></li>
+              <li><span class="name">Macaroni Salad</span><span class="dots" aria-hidden="true"></span><span class="price">Sm $3 / Lrg $5</span></li>
+              <li><span class="name">Fruit</span><span class="dots" aria-hidden="true"></span><span class="price">Sm $5 / Lrg $7</span></li>
+              <li><span class="name">Parfait</span><span class="dots" aria-hidden="true"></span><span class="price">$8</span></li>
+              <li><span class="name">Chile Verde Mac</span><span class="dots" aria-hidden="true"></span><span class="price">$11</span></li>
+              <li><span class="name">Mac N Cheese</span><span class="dots" aria-hidden="true"></span><span class="price">Sm $6 / Lrg $9</span></li>
+              <li><span class="name">Coleslaw</span><span class="dots" aria-hidden="true"></span><span class="price">Sm $3 / Lrg $5</span></li>
+              <li><span class="name">French Fries</span><span class="dots" aria-hidden="true"></span><span class="price">Sm $3 / Lrg $4</span></li>
+              <li><span class="name">Breaded Fried Tuna</span><span class="dots" aria-hidden="true"></span><span class="price">$9</span></li>
+              <li><span class="name">Tater Tots</span></li>
+            </ul>
+          </div>
+
+          <div class="menu-cat" id="chefs-choice">
+            <h3>Chef’s choice</h3>
+            <ul class="menu-list">
+              <li><span class="name">Baja Tacos</span><span class="dots" aria-hidden="true"></span><span class="price">$15</span></li>
+              <li><span class="name">Chicken Flautas</span><span class="dots" aria-hidden="true"></span><span class="price">$15</span></li>
+              <li><span class="name">Fish N Chips</span><span class="dots" aria-hidden="true"></span><span class="price">$15</span></li>
+              <li><span class="name">Butter Garlic Shrimp</span><span class="dots" aria-hidden="true"></span><span class="price">$18</span></li>
+              <li><span class="name">Blackened Salmon</span><span class="dots" aria-hidden="true"></span><span class="price">$18</span></li>
+              <li><span class="name">Del Mar Aguachile</span><span class="dots" aria-hidden="true"></span><span class="price">$17</span></li>
+              <li><span class="name">Ahi Tuna Poke Plate</span><span class="dots" aria-hidden="true"></span><span class="price">$16</span></li>
+              <li><span class="name">Chile Verde Plate</span><span class="dots" aria-hidden="true"></span><span class="price">$16</span></li>
+            </ul>
+          </div>
+
+          <div class="menu-cat" id="burgers">
+            <h3>Burgers</h3>
+            <ul class="menu-list">
+              <li><span class="name">Baker’s Burger</span><span class="dots" aria-hidden="true"></span><span class="price">$16</span></li>
+              <li><span class="name">Aduja Burger</span><span class="dots" aria-hidden="true"></span><span class="price">$16</span></li>
+              <li><span class="name">Atlantic Burger</span><span class="dots" aria-hidden="true"></span><span class="price">$17</span></li>
+            </ul>
+          </div>
+
+          <div class="menu-cat" id="salads">
+            <h3>Salads</h3>
+            <ul class="menu-list">
+              <li><span class="name">Spicy Cilantro Ranch Steak</span><span class="dots" aria-hidden="true"></span><span class="price">$19</span></li>
+              <li><span class="name">Very Berry Salad</span><span class="dots" aria-hidden="true"></span><span class="price">$14</span></li>
+              <li><span class="name">Cobb Salad</span><span class="dots" aria-hidden="true"></span><span class="price">$15</span></li>
+              <li><span class="name">Mediterranean Salad</span><span class="dots" aria-hidden="true"></span><span class="price">$16</span></li>
+              <li><span class="name">Chicken Caesar Salad</span><span class="dots" aria-hidden="true"></span><span class="price">$14</span></li>
+            </ul>
+          </div>
+
+          <div class="menu-cat" id="flatbreads">
+            <h3>Flat breads</h3>
+            <ul class="menu-list">
+              <li><span class="name">Chile Verde</span><span class="dots" aria-hidden="true"></span><span class="price">$15</span></li>
+              <li><span class="name">Truffle Rosemary Brie</span><span class="dots" aria-hidden="true"></span><span class="price">$15</span></li>
+              <li><span class="name">Chicken BBQ</span><span class="dots" aria-hidden="true"></span><span class="price">$15</span></li>
+            </ul>
+          </div>
+
+          <div class="menu-cat" id="hot-sandwiches">
+            <h3>Hot sandwiches</h3>
+            <p class="cat-note">Served with French fries</p>
+            <ul class="menu-list">
+              <li><span class="name">Tuna Melt</span><span class="dots" aria-hidden="true"></span><span class="price">$14</span></li>
+              <li><span class="name">Turkey Pesto</span><span class="dots" aria-hidden="true"></span><span class="price">$14</span></li>
+              <li><span class="name">Rosemary Brie</span><span class="dots" aria-hidden="true"></span><span class="price">$16</span></li>
+              <li><span class="name">California Chicken</span><span class="dots" aria-hidden="true"></span><span class="price">$14</span></li>
+              <li><span class="name">Torta Asada</span><span class="dots" aria-hidden="true"></span><span class="price">$14</span></li>
+              <li><span class="name">The New Yorker</span><span class="dots" aria-hidden="true"></span><span class="price">$16</span></li>
+              <li><span class="name">Turkey Bacon Melt</span><span class="dots" aria-hidden="true"></span><span class="price">$14</span></li>
+              <li><span class="name">Triple Grilled Cheese</span><span class="dots" aria-hidden="true"></span><span class="price">$11</span></li>
+              <li><span class="name">Pulled Pork</span><span class="dots" aria-hidden="true"></span><span class="price">$14</span></li>
+              <li><span class="name">Ratatouille</span><span class="dots" aria-hidden="true"></span><span class="price">$15</span></li>
+            </ul>
+          </div>
+
+          <div class="menu-cat" id="cold-sandwiches">
+            <h3>Cold sandwiches</h3>
+            <p class="cat-note">Served with French fries</p>
+            <ul class="menu-list">
+              <li><span class="name">Ham &amp; Cheese</span><span class="dots" aria-hidden="true"></span><span class="price">$12</span></li>
+              <li><span class="name">Turkey Avocado</span><span class="dots" aria-hidden="true"></span><span class="price">$12</span></li>
+              <li><span class="name">Club Deluxe</span><span class="dots" aria-hidden="true"></span><span class="price">$17</span></li>
+              <li><span class="name">Cranberry Turkey</span><span class="dots" aria-hidden="true"></span><span class="price">$14</span></li>
+              <li><span class="name">Albacore Tuna</span><span class="dots" aria-hidden="true"></span><span class="price">$13</span></li>
+              <li><span class="name">Salmon Lox</span><span class="dots" aria-hidden="true"></span><span class="price">$17</span></li>
+              <li><span class="name">Veggie Deluxe</span><span class="dots" aria-hidden="true"></span><span class="price">$12</span></li>
+              <li><span class="name">Avocado Toast</span><span class="dots" aria-hidden="true"></span><span class="price">$15</span></li>
+              <li><span class="name">BLT</span><span class="dots" aria-hidden="true"></span><span class="price">$13</span></li>
+              <li><span class="name">Torta De Jamon</span><span class="dots" aria-hidden="true"></span><span class="price">$14</span></li>
+            </ul>
+          </div>
+
+          <div class="menu-cat" id="pastries">
+            <h3>Pastries &amp; bakery</h3>
+            <p class="cat-note">Today’s case varies. We don’t have verified prices for these items, so please ask in store.</p>
+            <ul class="menu-list">
+              <li><span class="name">Croissants</span></li>
+              <li><span class="name">Chocolate Cake Donut</span></li>
+              <li><span class="name">Almond Bearclaw</span></li>
+              <li><span class="name">Churro Cheesecake</span></li>
+            </ul>
+          </div>
+
+          <div class="menu-cat" id="coffee-drinks">
+            <h3>Coffee &amp; drinks</h3>
+            <ul class="menu-list">
+              <li><span class="name">Coffee</span><span class="dots" aria-hidden="true"></span><span class="price">$3.00</span></li>
+              <li><span class="name">Lavender latte</span></li>
+              <li><span class="name">Matcha</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="price-note">Prices may change. Please confirm in store. A few popular items are listed without a price when we could not verify one from the shop’s “Provided by business” menu or the in-store boards.</p>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="wrap">
+        <p class="kicker">A look inside</p>
+        <h2>Photos</h2>
+        <p class="lead">Customer photos from the shop’s Google Maps and Google listing.</p>
+        <div class="gallery-grid">
+          <figure>
+            <img src="images/pastry-case.jpg" alt="The pastry display case, with croissants, danishes, muffins, and chalkboard menus">
+            <figcaption>The pastry case</figcaption>
+          </figure>
+          <figure>
+            <img src="images/chilaquiles.jpg" alt="Chilaquiles with a fried egg, avocado, radish, and pickled onion">
+            <figcaption>Chilaquiles</figcaption>
+          </figure>
+          <figure>
+            <img src="images/tres-leches-french-toast.jpg" alt="Tres leches French toast with strawberries and cream">
+            <figcaption>3 Leches French Toast</figcaption>
+          </figure>
+          <figure>
+            <img src="images/croissants-plate.jpg" alt="Assorted croissants and pastries on plates">
+            <figcaption>Croissants and pastries</figcaption>
+          </figure>
+          <figure>
+            <img src="images/coffee.jpg" alt="A glass mug of coffee">
+            <figcaption>Coffee</figcaption>
+          </figure>
+          <figure>
+            <img src="images/burritos.jpg" alt="Two burritos on a black plate">
+            <figcaption>Burritos</figcaption>
+          </figure>
+          <figure>
+            <img src="images/breakfast-burger.jpg" alt="Breakfast Burger biscuit sandwich with egg, cheese, and bacon">
+            <figcaption>Breakfast Burger</figcaption>
+          </figure>
+          <figure>
+            <img src="images/dessert-pastries.jpg" alt="Two plated desserts in a bakery box">
+            <figcaption>Desserts</figcaption>
+          </figure>
+          <figure>
+            <img src="images/sandwich.jpg" alt="A deli sandwich with ham, cheese, and lettuce, cut in half">
+            <figcaption>Sandwiches</figcaption>
+          </figure>
+          <figure>
+            <img src="images/chocolate-cake.jpg" alt="A slice of chocolate cake with cookie crumble, next to an iced coffee">
+            <figcaption>Chocolate cake</figcaption>
+          </figure>
+          <figure>
+            <img src="images/storefront.jpg" alt="Outdoor patio at Bread &amp; Honey with yellow umbrellas and a Bread &amp; Honey fence">
+            <figcaption>Outdoor seating</figcaption>
+          </figure>
+          <figure>
+            <img src="images/interior.jpg" alt="Dining room at Bread &amp; Honey with booths, pastel chairs, and a drink station">
+            <figcaption>The dining room</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="cakes">
+      <div class="wrap">
+        <p class="kicker">Made just for you</p>
+        <h2>Custom cakes &amp; orders</h2>
+        <div class="cake-card">
+          <img src="images/dessert-pastries.jpg" alt="Two individual plated cakes from Bread &amp; Honey, one strawberry and one caramel">
+          <div>
+            <h2>Planning something sweet?</h2>
+            <p>Bread &amp; Honey takes custom cakes and orders. Text for a quote — the shop shares this number on Instagram.</p>
+            <a class="phone" href="sms:+16615160053">661-516-0053</a>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="sms:+16615160053">Text for a quote</a>
+              <a class="btn btn-ghost" href="https://www.instagram.com/breadandhoneybakersfield/" target="_blank" rel="noopener">@breadandhoneybakersfield</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="wrap">
+        <p class="kicker">A little of everything</p>
+        <h2>Why people love us</h2>
+        <p class="lead">Here’s what diners highlight about Bread &amp; Honey.</p>
+        <div class="why-grid">
+          <article class="why-item">
+            <div class="ico" aria-hidden="true">🌯</div>
+            <h3>Breakfast burritos &amp; chilaquiles</h3>
+            <p>Guests call out the delicious breakfast burritos and chilaquiles.</p>
+          </article>
+          <article class="why-item">
+            <div class="ico" aria-hidden="true">🥐</div>
+            <h3>Fresh bakery items</h3>
+            <p>A wide variety of fresh bakery items, from pastries and donuts to croissants.</p>
+          </article>
+          <article class="why-item">
+            <div class="ico" aria-hidden="true">🌿</div>
+            <h3>Inviting atmosphere</h3>
+            <p>Diners highlight the inviting atmosphere — including outdoor seating.</p>
+          </article>
+          <article class="why-item">
+            <div class="ico" aria-hidden="true">💛</div>
+            <h3>Friendly staff</h3>
+            <p>Guests mention the friendly staff and welcoming service.</p>
+          </article>
+          <article class="why-item">
+            <div class="ico" aria-hidden="true">🤖</div>
+            <h3>Robot food delivery</h3>
+            <p>A fun novelty: robot food delivery at the café.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="wrap">
+        <p class="kicker">From Google</p>
+        <h2>Reviews</h2>
+        <div class="score-banner">
+          <div class="score-num">4.1</div>
+          <div>
+            <div class="stars" aria-hidden="true">★★★★<span class="half">★</span></div>
+            <strong>250 Google reviews</strong>
+          </div>
+        </div>
+        <div class="review-grid">
+          <blockquote class="card">
+            <p>“Stopped here on our way to Sequoia and so pleased we did! Amazing service, delicious food, fresh donuts and baked goods! Plus the coffee was really good!!”</p>
+            <footer>Google review</footer>
+          </blockquote>
+          <blockquote class="card">
+            <p>“The lavender latte, matcha, croissants, and cookies were excellent. The employees were friendly, and all of our food came out quickly. Will definitely visit here again.”</p>
+            <footer>Google review</footer>
+          </blockquote>
+          <blockquote class="card">
+            <p>“Croissant sandwich very delicious and the omelets very delicious.”</p>
+            <footer>Google review</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="visit">
+      <div class="wrap">
+        <p class="kicker">Come by</p>
+        <h2>Visit us</h2>
+        <p class="lead">Find us on Ashe Road in Bakersfield. Hours below are from the shop’s Instagram.</p>
+        <div class="visit-grid">
+          <div class="visit-photos">
+            <img class="storefront" src="images/storefront.jpg" alt="Bread &amp; Honey outdoor patio with yellow umbrellas and courtyard seating">
+            <img src="images/interior.jpg" alt="Inside the dining room, with booths, wooden tables, and pastel chairs">
+            <div class="map-wrap">
+              <div class="map-fallback">
+                <div class="pin" aria-hidden="true">📍</div>
+                <strong>6314 Ashe Rd Ste 400</strong>
+                <span>Bakersfield, CA 93313</span>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=6314+Ashe+Rd+Ste+400,+Bakersfield,+CA+93313" target="_blank" rel="noopener">Open in Google Maps</a>
+              </div>
+              <iframe
+                title="Map of Bread &amp; Honey at 6314 Ashe Road, Bakersfield"
+                src="https://maps.google.com/maps?q=6314%20Ashe%20Rd%20Ste%20400%2C%20Bakersfield%2C%20CA%2093313&amp;z=16&amp;output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="visit-card">
+            <h3>Bread &amp; Honey</h3>
+            <div class="info-row">
+              <span aria-hidden="true">📍</span>
+              <div>
+                <strong>Address</strong>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=6314+Ashe+Rd+Ste+400,+Bakersfield,+CA+93313" target="_blank" rel="noopener">6314 Ashe Rd Ste 400, Bakersfield, CA 93313</a>
+              </div>
+            </div>
+            <div class="info-row">
+              <span aria-hidden="true">☎️</span>
+              <div>
+                <strong>Phone</strong>
+                <a href="tel:+16612828487">(661) 282-8487</a>
+              </div>
+            </div>
+            <div class="info-row">
+              <span aria-hidden="true">🕙</span>
+              <div>
+                <strong>Hours</strong>
+                <span>Open daily 6am–8pm</span><br>
+                <span>Kitchen open 7:30am–2:30pm</span>
+              </div>
+            </div>
+            <div class="info-row">
+              <span aria-hidden="true">📷</span>
+              <div>
+                <strong>Instagram</strong>
+                <a href="https://www.instagram.com/breadandhoneybakersfield/" target="_blank" rel="noopener">@breadandhoneybakersfield</a>
+              </div>
+            </div>
+            <div class="amenity">
+              <span class="chip">Outdoor seating</span>
+              <span class="chip">No reservations</span>
+              <span class="chip">Vegan options</span>
+            </div>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="tel:+16612828487">Call to order</a>
+              <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=6314+Ashe+Rd+Ste+400,+Bakersfield,+CA+93313" target="_blank" rel="noopener">Directions</a>
+            </div>
+            <p class="order-note">Order pickup or delivery online through Toast. Grubhub has $5 off orders over $25.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <span class="brand">Bread <em>&amp;</em> Honey</span>
+          Bakery, breakfast &amp; café · Bakersfield, CA
+        </div>
+        <div>
+          6314 Ashe Rd Ste 400, Bakersfield, CA 93313<br>
+          <a href="tel:+16612828487">(661) 282-8487</a><br>
+          Open daily 6am–8pm · Kitchen 7:30am–2:30pm<br>
+          Custom cakes: text <a href="sms:+16615160053">661-516-0053</a><br>
+          <a href="https://www.instagram.com/breadandhoneybakersfield/" target="_blank" rel="noopener">@breadandhoneybakersfield</a>
+        </div>
+      </div>
+      <p class="legal">Photos are from Google Maps customer photos and the shop’s Google listing. Menu prices come from the shop’s “Provided by business” Google menu when available, and otherwise from in-store menu boards. Amenities and reviews are from the public Google listing. Hours and the custom-cake number are from @breadandhoneybakersfield on Instagram.</p>
+      <p class="demo-note">Demo website concept, not the official site of Bread &amp; Honey.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var btn = document.getElementById("menuBtn");
+      var panel = document.getElementById("mobilePanel");
+      if (!btn || !panel) return;
+      btn.addEventListener("click", function () {
+        var open = panel.classList.toggle("open");
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      });
+      panel.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          panel.classList.remove("open");
+          btn.setAttribute("aria-expanded", "false");
+          btn.setAttribute("aria-label", "Open menu");
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
